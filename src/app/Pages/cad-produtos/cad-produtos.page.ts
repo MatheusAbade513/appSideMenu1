@@ -14,6 +14,7 @@ export class CadProdutosPage implements OnInit {
   images:any=[];
   imgSrc:any
   isImg:boolean=false
+  preco:string=''
 
   constructor(private storage: Storage, private firestore:Firestore) { }
   ngOnInit() {
@@ -35,6 +36,7 @@ export class CadProdutosPage implements OnInit {
     const a = Number(preco.value)
     const b =a.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
     console.log(b)
+    this.preco=b
   }
 
   selectImage(img:any, modal:any){
